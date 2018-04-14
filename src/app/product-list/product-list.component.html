@@ -1,0 +1,16 @@
+<div class="box">
+
+  <div class="box-prod-list">
+    <h1>{{ title }}</h1>
+    <ul *ngFor="let item of productList" 
+          routerLink="about/{{lastId}}" 
+          (click)="goToAbout(item)" 
+          routerLinkActive="active">
+      <li>{{ item.name }}</li>
+    </ul>
+  </div>
+
+  <button (click)="goToCreateProduct()" [disabled]="disabledNew">Create new product</button>
+</div>
+
+<router-outlet></router-outlet>

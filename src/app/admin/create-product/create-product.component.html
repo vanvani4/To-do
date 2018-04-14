@@ -1,0 +1,29 @@
+<form [formGroup]="createForm" (ngSubmit)="createProduct(createForm)" novalidate>
+
+  <div>
+    <input formControlName="name" type="text" placeholder="Product name">
+  </div>
+  <div *ngIf="formErrors.name" class="alert">
+    {{formErrors.name}}
+  </div>
+
+  <div>
+    <input formControlName="price" type="number" placeholder="Price">
+  </div>
+  <div *ngIf="formErrors.price" class="alert">
+    {{formErrors.price}}
+  </div>
+
+  <div>
+    <textarea formControlName="description" type="text" rows="10" cols="30" placeholder="Description">
+        </textarea>
+  </div>
+  <div *ngIf="formErrors.description" class="alert">
+    {{formErrors.description}}
+  </div>
+
+  <button [disabled]="createForm.invalid">Add product</button>
+
+</form>
+
+<button (click)="logOut()">Log Out</button>

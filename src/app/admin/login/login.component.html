@@ -1,0 +1,22 @@
+<form [formGroup]="loginForm" novalidate (ngSubmit)="log()">
+  <div>
+    <label for="login">Login</label>
+    <input formControlName="login" type="text" id="login" placeholder="Ivan or Oleg">
+  </div>
+
+  <div *ngIf="formErrors.login" class="alert">
+    {{formErrors.login}}
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input formControlName="password" type="password" id="password" placeholder="123456">
+  </div>
+
+  <div *ngIf="formErrors.password" class="alert">
+    {{formErrors.password}}
+  </div>
+
+  <button [disabled]="loginForm.invalid">Login</button>
+
+</form>
